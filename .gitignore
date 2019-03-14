@@ -2,9 +2,12 @@
 .idea
 *.iml
 
+lib
 out
 build
+.gitignore
 
 *.class
 .DS_Store
 
+local.properties
