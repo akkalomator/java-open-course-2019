@@ -49,8 +49,12 @@ class RssToFileTest {
 
         try {
             assertEquals(
-                Files.readAllLines(Paths.get("expected.txt"), StandardCharsets.UTF_8).toString(),
-                Files.readAllLines(Paths.get("test-result.txt"), StandardCharsets.UTF_8).toString()
+                Files.readAllLines(
+                    Paths.get("expected.txt"),
+                    StandardCharsets.UTF_8).toString().replaceAll("\n", ""),
+                Files.readAllLines(
+                    Paths.get("test-result.txt"),
+                    StandardCharsets.UTF_8).toString().replaceAll("\n", "")
             );
         } catch (IOException e) {
             fail(e);
